@@ -1,0 +1,62 @@
+/* src/index.css or similar global CSS file */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------ */
+/* CUSTOM HIGH-TECH BACKGROUND ANIMATIONS           */
+/* ------------------------------------------------ */
+
+@keyframes moveAndFade1 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0; }
+  50% { transform: translate(20vw, 30vh) scale(1.2); opacity: 0.3; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0; }
+}
+
+@keyframes moveAndFade2 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0; }
+  50% { transform: translate(-25vw, -35vh) scale(1.1); opacity: 0.25; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0; }
+}
+
+@keyframes moveAndFade3 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0; }
+  50% { transform: translate(15vw, -20vh) scale(1.3); opacity: 0.35; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0; }
+}
+
+/* Use @apply to create reusable Tailwind components */
+.animated-bg-element {
+  @apply 
+    absolute 
+    rounded-full 
+    opacity-0 
+    filter 
+    blur-3xl;
+  
+  /* Apply custom CSS properties */
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+/* Apply specific styles to each element */
+.element-1 {
+  @apply w-64 h-64 top-1/4 left-1/4 bg-cyan-500/30;
+  animation-name: moveAndFade1;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  @apply w-72 h-72 bottom-1/4 right-1/4 bg-indigo-500/30;
+  animation-name: moveAndFade2;
+  animation-delay: 5s;
+}
+
+.element-3 {
+  @apply w-52 h-52 top-1/2 left-1/2 bg-teal-500/30;
+  animation-name: moveAndFade3;
+  animation-delay: 10s;
+}
