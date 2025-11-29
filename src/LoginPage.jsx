@@ -191,7 +191,7 @@ export const LoginPage = ({ onLogin }) => {
              <BotIcon className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white tracking-tight">
-            {isLogin ? 'Welcome Back' : 'Create Account'}
+            {isLogin ? 'Welcome ' : 'Create Account'}
           </h1>
           <p className="mt-2 text-sm text-blue-200">
             {isLogin ? 'Sign in to access Fast Assistant' : 'Join us to explore AI'}
